@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg text-white py-4">
+      <div class="container-fluid justify-content-around">
+        <div class="d-flex align-items-center">
+          <img
+            src="https://routeweather.netlify.app/images/logo@2x.png"
+            alt=""
+            class="logo"
+            width="64"
+            height="38"
+          />
+          <div class="d-flex flex-column ms-3">
+            <a class="navbar-brand fs-6 text-white py-0" href="#">Weather</a>
+            <p style="font-size: 10px" class="my-0 text-white-50">
+              tagline goes here
+            </p>
+          </div>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-2">
+              <a
+                class="nav-link text-white border border-3 rounded-5 px-4 py-2"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a
+                class="nav-link text-white border border-3 rounded-5 px-4 py-2"
+                aria-current="page"
+                href="#"
+                >News</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a
+                class="nav-link text-white border border-3 rounded-5 px-4 py-2"
+                aria-current="page"
+                href="#"
+                >Live Cameras</a
+              >
+            </li>
+            <li class="nav-item mx-2">
+              <a
+                class="nav-link text-white border border-3 rounded-5 px-4 py-2"
+                aria-current="page"
+                href="#"
+                >Photos</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link text-white border border-3 rounded-5 px-4 py-2"
+                aria-current="page"
+                href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="home-page d-flex flex-column align-items-center justify-content-center"
+    >
+      <div class="input-location w-75 my-5">
+        <div class="input-group mb-3 d-flex position-relative">
+          <input
+            id="location"
+            type="text"
+            class="form-control text-white p-3 rounded-pill"
+            placeholder="Find Your Location...."
+          />
+          <button
+            class="find-btn btn btn-outline-secondary position-absolute end-0 top-50 rounded-pill p-2 me-1"
+            type="button"
+            id="button-addon2"
+          >
+            Find
+          </button>
+        </div>
+      </div>
+      <div class="weather-block container border border-0 rounded-3 mt-2 mb-5">
+        <div class="row">
+          <div
+            class="weather-item col-md-4 col-sm-12 text-white d-flex flex-column align-items-start p-0"
+          >
+            <div
+              class="date d-flex justify-content-between w-100 px-2 border border-0"
+            >
+              <p id="firstDay" class="p-2 pb-0"></p>
+              <p id="monthTxt" class="p-2 pb-0"></p>
+            </div>
+            <div class="first-day weather-info p-3">
+              <h4 class="text-secondary fs-5"></h4>
+              <h1 id="weatherNum" class="weather-num"></h1>
+              <img width="80" src="" alt="" />
+              <p class="custom"></p>
+              <span class="text-secondary me-3"
+                ><img
+                  src="https://routeweather.netlify.app/images/icon-umberella@2x.png"
+                  alt=""
+                  class="me-1"
+                  width="21"
+                  height="21"
+                />20%</span
+              >
+              <span class="text-secondary me-3"
+                ><img
+                  src="https://routeweather.netlify.app/images/icon-wind@2x.png"
+                  alt=""
+                  class="me-1"
+                  width="21"
+                  height="21"
+                />18km/h</span
+              >
+              <span class="text-secondary me-3"
+                ><img
+                  src="	https://routeweather.netlify.app/images/icon-compass@2x.png"
+                  alt=""
+                  class="me-1"
+                  width="21"
+                  height="21"
+                />East</span
+              >
+            </div>
+          </div>
+          <div
+            id="nextDayDiv"
+            class="weather-item bg-darker col-md-4 col-sm-12 text-white d-flex flex-column justify-content-start align-items-center p-0"
+          >
+            <div class="date-darker d-flex justify-content-center w-100 px-2">
+              <p id="secondDay" class="p-2 pb-0"></p>
+            </div>
+            <div
+              class="d-flex flex-column h-100 justify-content-center align-items-center"
+            >
+              <div class="text-secondary fs-4 my-2 text-warning">
+                <img width="80" src="" alt="" />
+              </div>
+              <h1 id="nextDay" class="fs-2 mt-3"></h1>
+              <p class="fs-6 text-white-50"></p>
+              <p class="custom mt-3"></p>
+            </div>
+          </div>
+          <div
+            id="thirdDayDiv"
+            class="weather-item col-md-4 col-sm-12 text-white d-flex flex-column justify-content-start align-items-center p-0"
+          >
+            <div
+              class="date d-flex justify-content-center w-100 px-2 rounded-top-right"
+            >
+              <p id="thirdDay" class="p-2 pb-0"></p>
+            </div>
+            <div
+              class="d-flex flex-column h-100 justify-content-center align-items-center"
+            >
+              <div class="text-secondary fs-4 my-2 text-warning">
+                <img width="80" src="" alt="" />
+              </div>
+              <h1 id="thirdDayData" class="fs-2 mt-3"></h1>
+              <p class="fs-6 text-white-50"></p>
+              <p class="custom mt-3"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="w-100 d-flex justify-content-around align-items-baseline">
+        <div class="input-location w-50 my-5 d-flex flex-column">
+          <div class="input-group mb-3 d-flex position-relative">
+            <input
+              id="location"
+              type="text"
+              class="form-control text-white p-4 rounded-pill"
+              placeholder="Enter your email to subscribe....."
+            />
+            <button
+              class="find-btn btn btn-outline-secondary position-absolute end-0 top-50 rounded-pill p-3 me-2"
+              type="button"
+              id="button-addon2"
+            >
+              Subscribe
+            </button>
+          </div>
+          <p class="fs-6 text-white-50 py-4">
+            Copyright 2014 Company name. Designed by Themezy. All rights
+            reserved
+          </p>
+        </div>
+        <div class="social-links">
+          <a href="" class="text-decoration-none">
+            <i
+              class="fa-brands fs-5 border border-1 rounded-circle fa-facebook"
+            ></i>
+          </a>
+          <a href="" class="text-decoration-none">
+            <i
+              class="fa-brands fs-5 border border-1 rounded-circle fa-twitter"
+            ></i>
+          </a>
+          <a href="" class="text-decoration-none">
+            <i
+              class="fa-brands fs-5 border border-1 rounded-circle fa-google-plus"
+            ></i>
+          </a>
+          <a href="" class="text-decoration-none">
+            <i
+              class="fa-brands fs-5 border border-1 rounded-circle fa-pinterest"
+            ></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

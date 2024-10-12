@@ -1,0 +1,87 @@
+:root {
+  --main-bg-color: #1e202b;
+  --secondary-bg-color: #323544;
+  --secondary-color: #009ad8;
+}
+
+div.home-page {
+  background-image: url("../images/banner.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: var(--main-bg-color);
+}
+.form-control {
+  background-color: var(--main-bg-color);
+  border: var(--main-bg-color);
+}
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.307);
+}
+.form-control:focus {
+  background-color: var(--main-bg-color);
+}
+
+.input-group .find-btn {
+  transform: translateY(-50%);
+  background-color: var(--secondary-color);
+  color: white;
+  width: 15%;
+  z-index: 9999;
+}
+.weather-block {
+  background-color: var(--secondary-bg-color);
+}
+.weather-block .bg-darker {
+  background-color: #262936;
+}
+.weather-block .weather-item .date {
+  background-color: #2d303d;
+  border-top-left-radius: var(--bs-border-radius-lg) !important;
+}
+.weather-block .weather-item .rounded-top-right {
+  border-top-right-radius: var(--bs-border-radius-lg) !important;
+}
+.weather-block .weather-item .weather-num {
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 135px;
+}
+.weather-block .weather-item p.custom {
+  font-weight: 300;
+  color: rgb(0, 154, 216);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.weather-block .weather-item .date-darker {
+  background-color: #222531;
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+.navbar {
+  background-color: #1e202b !important;
+}
+.nav-link {
+  border-color: transparent !important;
+}
+footer {
+  background-color: #262936;
+}
+.nav-link:hover {
+  border: 3px solid #009ad8 !important;
+  border-radius: 2rem;
+  color: #009ad8 !important;
+}
+div.social-links i {
+  color: var(--secondary-color);
+  border-color: transparent !important;
+  background-color: var(--main-bg-color);
+  padding: 0.8rem;
+  margin-inline: 0.2 rem;
+}
+div.social-links i:hover {
+  color: white;
+  border-color: transparent !important;
+  background-color: var(--secondary-color);
+}
